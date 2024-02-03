@@ -3,6 +3,7 @@ package com.example.hello_cmake
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.corelib.NativeLib
 import com.example.hello_cmake.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,13 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         binding.sampleText.text = viewModel.testFromCore(num1 = 12, num2 = 13).toString()
+
+        binding.sampleText.setOnClickListener {
+            println("View was clicked!")
+        }
+
+        val naiveLib = NativeLib()
+        println("valor do method: ${naiveLib.stringFromJNI()}")
     }
 
     /**

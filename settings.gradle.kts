@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Hello-cmake"
 include(":app")
- 
+include(":corelib")
