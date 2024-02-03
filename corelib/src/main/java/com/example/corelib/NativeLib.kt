@@ -8,6 +8,8 @@ class NativeLib {
      */
     external fun stringFromJNI(): String
 
+    external fun sort(arr: IntArray): IntArray
+
     companion object {
         // Used to load the 'corelib' library on application startup.
         init {

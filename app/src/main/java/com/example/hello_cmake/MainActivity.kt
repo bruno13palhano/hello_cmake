@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = MainViewModel()
+        viewModel = MainViewModel(NativeLib())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -24,8 +24,9 @@ class MainActivity : AppCompatActivity() {
             println("View was clicked!")
         }
 
-        val naiveLib = NativeLib()
-        println("valor do method: ${naiveLib.stringFromJNI()}")
+        val array = intArrayOf(3,2,1,14,2,8,90,5,1,1)
+        println("valor do method: ${viewModel.getMessage()}")
+        viewModel.sort(array).iterator().forEach { println("valor de i: $it") }
     }
 
     /**
